@@ -1,7 +1,7 @@
 extends Area3D
 
 # the number of degress the coins rotates every frame
-const COIN_ROTATION_SPEED = 2
+const COIN_ROTATION_SPEED : float = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
