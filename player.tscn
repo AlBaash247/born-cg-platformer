@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn66g7w7jx5hr"]
+[gd_scene load_steps=6 format=3 uid="uid://dn66g7w7jx5hr"]
 
 [ext_resource type="Script" uid="uid://b3p8jbkr4gjif" path="res://player.gd" id="1_4flbx"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
+albedo_color = Color(0.4246666, 0.91, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_sh265"]
+material = SubResource("StandardMaterial3D_4flbx")
+
+[sub_resource type="SphereMesh" id="SphereMesh_4flbx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4flbx"]
 
@@ -12,5 +18,21 @@ script = ExtResource("1_4flbx")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_sh265")
 
+[node name="Face" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.733698, 0, 0, 0, 0.7547307, 0, 0, 0, -0.31527022, 0, 0.52389103, -0.48217994)
+mesh = SubResource("SphereMesh_4flbx")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_4flbx")
+
+[node name="CameraController" type="Node3D" parent="."]
+top_level = true
+
+[node name="CameraTarget" type="Node3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 0.96642095, 0.25696412, 0, -0.25696412, 0.96642095, 0, 3.4222214, 8.110229)
+
+[node name="Camera3D" type="Camera3D" parent="CameraController/CameraTarget"]
+transform = Transform3D(1, 0, 0, 0, 0.9969746, 0.077728294, 0, -0.077728294, 0.9969746, 0, 0.50499946, -1.3346351)
+current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
