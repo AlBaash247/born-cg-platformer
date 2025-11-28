@@ -23,6 +23,7 @@ transform = Transform3D(0.7382871, 0.40330622, 0.54062593, -0.64447594, 0.185382
 shadow_enabled = true
 
 [node name="FallingBlocksContainer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 
 [node name="FallingBlock1" parent="FallingBlocksContainer" instance=ExtResource("1_3hls8")]
 transform = Transform3D(0.7071068, -0.7071068, 0, 0.7040288, 0.7040288, 0.09320474, -0.065905705, -0.065905705, 0.99564695, 0, 3, 0)

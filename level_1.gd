@@ -3,6 +3,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalScript.current_level_coins_collected = 0
 	GlobalScript.current_level_coins_count = $CoinsContainer.get_child_count()
 	
 
