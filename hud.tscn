@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlirnhgu14qjm"]
+
+[ext_resource type="Script" uid="uid://n5s6fbgpmmx3" path="res://hud.gd" id="1_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://dpo1hb04ep6x7" path="res://Assets/images/hud_coin.png" id="1_37p78"]
+[ext_resource type="FontFile" uid="uid://c4dlw7ujwh6su" path="res://Assets/Fonts/FrancoisOne-Regular.ttf" id="2_64ctp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2snw"]
+bg_color = Color(0, 0, 0, 0.38039216)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_8sq4i")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 239.37102
+offset_bottom = 74.0
+scale = Vector2(1.5110881, 2.0000005)
+theme_override_styles/panel = SubResource("StyleBoxFlat_n2snw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 30.0
+offset_top = 29.0
+offset_right = 117.0
+offset_bottom = 116.0
+texture = ExtResource("1_37p78")
+expand_mode = 1
+
+[node name="CoinsCollectedLabel" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 40.0
+offset_right = 208.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.75686276, 0.50980395, 0.011764706, 1)
+theme_override_fonts/font = ExtResource("2_64ctp")
+theme_override_font_sizes/font_size = 48
+text = "999"
+horizontal_alignment = 1
+
+[node name="CoinsCountLabel" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 40.0
+offset_right = 312.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.75686276, 0.50980395, 0.011764706, 1)
+theme_override_fonts/font = ExtResource("2_64ctp")
+theme_override_font_sizes/font_size = 48
+text = "999"
+horizontal_alignment = 1
+
+[node name="CoinsCountLabel2" type="Label" parent="."]
+offset_left = 208.0
+offset_top = 40.0
+offset_right = 224.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.75686276, 0.50980395, 0.011764706, 1)
+theme_override_fonts/font = ExtResource("2_64ctp")
+theme_override_font_sizes/font_size = 48
+text = "/"
+horizontal_alignment = 1

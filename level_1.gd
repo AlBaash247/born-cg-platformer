@@ -5,9 +5,7 @@ extends Node3D
 func _ready() -> void:
 	GlobalScript.current_level_coins_collected = 0
 	GlobalScript.current_level_coins_count = $CoinsContainer.get_child_count()
-	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func get_current_level_coins_count () ->void:
+	return $CoinsContainer.get_child_count()
 	

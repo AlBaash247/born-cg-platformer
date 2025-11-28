@@ -3,6 +3,7 @@ extends Area3D
 # the number of degress the coins rotates every frame
 const COIN_ROTATION_SPEED : float = 2
 
+@export var hud : CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +30,7 @@ func check_if_coins_container_exist_in_current_level() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	
 	GlobalScript.increment_current_level_coins_collected()
+	hud.get_node("CoinsCollectedLabel").text = str(GlobalScript.current_level_coins_collected)
 
 	set_collision_layer_value(3, false)
 	set_collision_mask_value(1, false)
