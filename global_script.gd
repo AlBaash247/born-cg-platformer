@@ -4,7 +4,7 @@ var current_level_coins_count := 0
 var current_level_coins_collected := 0
 
 
-func increament_current_level_coins_collected():
+func increment_current_level_coins_collected():
 	# if player collected a coin, increase coins_count
 	current_level_coins_collected += 1
 

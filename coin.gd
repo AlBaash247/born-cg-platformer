@@ -28,7 +28,7 @@ func check_if_coins_container_exist_in_current_level() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	
-	GlobalScript.increament_current_level_coins_collected()
+	GlobalScript.increment_current_level_coins_collected()
 
 	set_collision_layer_value(3, false)
 	set_collision_mask_value(1, false)
