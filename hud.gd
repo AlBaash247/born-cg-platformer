@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 	$CoinsCountLabel.text = str(coins_container.get_child_count())
 	
-	$CoinsCollectedLabel.text = str(0)
+	$CoinsCollectedLabel.text = "0"
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

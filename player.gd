@@ -10,15 +10,6 @@ var xform : Transform3D
 
 func _physics_process(delta: float) -> void:
 	
-	# rotate camera left
-	if Input.is_action_just_pressed("cam_left"):
-		$CameraController.rotate_y(deg_to_rad(-30))
-	
-	# rotate camera right
-	if Input.is_action_just_pressed("cam_right"):
-		$CameraController.rotate_y(deg_to_rad(30))
-		
-
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -31,15 +22,28 @@ func _physics_process(delta: float) -> void:
 	
 func handle_palyer_movment() -> void:
 	
+	# Get the input direction and handle the movement/deceleration.
+	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
+	# Player Character animation:
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		$AnimationPlayer.play("jump")
+	elif is_on_floor() and input_dir != Vector2.ZERO:
+		$AnimationPlayer.play("run")
+	elif is_on_floor() and input_dir == Vector2.ZERO:
+		$AnimationPlayer.play("idle")
+		
+	# rotate camera left
+	if Input.is_action_just_pressed("cam_left"):
+		$CameraController.rotate_y(deg_to_rad(-30))
+	
+	# rotate camera right
+	if Input.is_action_just_pressed("cam_right"):
+		$CameraController.rotate_y(deg_to_rad(30))
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
-	# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	
 
 	
 	# make player character move in relation of camera rotaiton
@@ -48,8 +52,8 @@ func handle_palyer_movment() -> void:
 	$RayCast3D.position = global_position
 	
 	# rotate carachter in relation to the camera
-	if input_dir != Vector2(0,0):
-		$MeshInstance3D.rotation_degrees.y = $CameraController.rotation_degrees.y - rad_to_deg(input_dir.angle()) - 90
+	if input_dir != Vector2.ZERO:
+		$Armature.rotation_degrees.y = $CameraController.rotation_degrees.y - rad_to_deg(input_dir.angle()) - 90
 		
 	# rotate player character to match floor
 	if is_on_floor():

@@ -16,49 +16,52 @@ script = ExtResource("1_8sq4i")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 19.0
-offset_top = 19.0
-offset_right = 239.37102
-offset_bottom = 74.0
+offset_top = 24.0
+offset_right = 175.84064
+offset_bottom = 51.999992
 scale = Vector2(1.5110881, 2.0000005)
 theme_override_styles/panel = SubResource("StyleBoxFlat_n2snw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 30.0
-offset_top = 29.0
-offset_right = 117.0
-offset_bottom = 116.0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 88.0
+offset_bottom = 80.0
 texture = ExtResource("1_37p78")
 expand_mode = 1
 
 [node name="CoinsCollectedLabel" type="Label" parent="."]
-offset_left = 120.0
-offset_top = 40.0
-offset_right = 208.0
-offset_bottom = 109.0
+offset_left = 96.0
+offset_top = 24.0
+offset_right = 160.0
+offset_bottom = 76.0
 theme_override_colors/font_color = Color(0.75686276, 0.50980395, 0.011764706, 1)
 theme_override_fonts/font = ExtResource("2_64ctp")
-theme_override_font_sizes/font_size = 48
-text = "999"
+theme_override_font_sizes/font_size = 36
+text = "0"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CoinsCountLabel" type="Label" parent="."]
-offset_left = 224.0
-offset_top = 40.0
-offset_right = 312.0
-offset_bottom = 109.0
+offset_left = 160.0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 76.0
 theme_override_colors/font_color = Color(0.75686276, 0.50980395, 0.011764706, 1)
 theme_override_fonts/font = ExtResource("2_64ctp")
-theme_override_font_sizes/font_size = 48
-text = "999"
+theme_override_font_sizes/font_size = 36
+text = "99"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CoinsCountLabel2" type="Label" parent="."]
-offset_left = 208.0
-offset_top = 40.0
-offset_right = 224.0
-offset_bottom = 109.0
+offset_left = 152.0
+offset_top = 24.0
+offset_right = 168.0
+offset_bottom = 76.0
 theme_override_colors/font_color = Color(0.75686276, 0.50980395, 0.011764706, 1)
 theme_override_fonts/font = ExtResource("2_64ctp")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 36
 text = "/"
 horizontal_alignment = 1
+vertical_alignment = 1
