@@ -1,15 +1,7 @@
-[gd_scene load_steps=24 format=4 uid="uid://dn66g7w7jx5hr"]
+[gd_scene load_steps=21 format=4 uid="uid://dn66g7w7jx5hr"]
 
 [ext_resource type="Script" uid="uid://b3p8jbkr4gjif" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://bxbsbsarranlr" path="res://Assets/Models/game-robot-001_robot_mix_decals.png" id="2_onrkg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
-albedo_color = Color(0.4246666, 0.91, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_sh265"]
-material = SubResource("StandardMaterial3D_4flbx")
-
-[sub_resource type="SphereMesh" id="SphereMesh_4flbx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 radius = 0.44873047
@@ -818,14 +810,6 @@ _data = {
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 22
 script = ExtResource("1_4flbx")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("BoxMesh_sh265")
-
-[node name="Face" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.733698, 0, 0, 0, 0.7547307, 0, 0, 0, -0.31527022, 0, 0.52389103, -0.48217994)
-mesh = SubResource("SphereMesh_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8655511, 0, 0.1543274, 0)

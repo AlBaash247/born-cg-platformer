@@ -228,5 +228,10 @@ collision_layer = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48752362, 0)
 shape = SubResource("CylinderShape3D_k8dlg")
 
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07054869, 0.38)
+target_position = Vector3(0, -0.3, 0)
+collision_mask = 2
+
 [connection signal="body_entered" from="EnemySlimeSideChecker" to="." method="_on_enemy_slime_side_checker_body_entered"]
 [connection signal="body_entered" from="EnemySlimeTopChecker" to="." method="_on_enemy_slime_top_checker_body_entered"]

@@ -40,7 +40,7 @@ transform = Transform3D(0.23649204, -0.9704182, -0.04858139, 0.9693959, 0.232260
 transform = Transform3D(0.24522993, -0.9007868, -0.3583929, 0.9693959, 0.23226082, 0.07954227, 0.0115899965, -0.3669307, 0.9301761, 0.5629554, 3, -1.8068514)
 
 [node name="Player" parent="." instance=ExtResource("2_hbghi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89821744, 0.50923467, 0.950295)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.887566, 7.5102205, 19.396704)
 
 [node name="CoinsIcon" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.200758, 1.1141369, 3.2055473)
@@ -416,7 +416,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.036276, 3.3505523, -10.0191
 direction = Vector3(0, 0, 1)
 
 [node name="EnemySlime4" parent="SlimeEnemies" instance=ExtResource("10_gyffv")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.036276, 3.3505523, -5.019125)
-direction = Vector3(0, 0, -1)
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -25.16033, 5.7047772, 13.95648)
+direction = Vector3(-1, 0, 0)
+enable_turn_around_at_edges = false
 
 [connection signal="body_entered" from="FallZone" to="Player" method="_on_fall_zone_body_entered"]
