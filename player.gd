@@ -82,6 +82,9 @@ func match_floor_rotation(floor_normal : Vector3):
 	global_transform = global_transform.interpolate_with(xform, 0.3)
 	
 
+func bounce () -> void:
+	# Handle jump.
+		velocity.y = JUMP_VELOCITY
 
 func _on_fall_zone_body_entered(body: Node3D) -> void:
 	#reset game if player fall off

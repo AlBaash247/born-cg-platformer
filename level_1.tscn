@@ -401,18 +401,22 @@ shape = SubResource("BoxShape3D_j7kpp")
 
 [node name="HUD" parent="." instance=ExtResource("9_5rr72")]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="SlimeEnemies" type="Node3D" parent="."]
 
-[node name="EnemySlime1" parent="Node3D" instance=ExtResource("10_gyffv")]
+[node name="EnemySlime1" parent="SlimeEnemies" instance=ExtResource("10_gyffv")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 11.036276, 3.3505523, 4.9808755)
 direction = Vector3(-1, 0, 0)
 
-[node name="EnemySlime3" parent="Node3D" instance=ExtResource("10_gyffv")]
+[node name="EnemySlime3" parent="SlimeEnemies" instance=ExtResource("10_gyffv")]
 transform = Transform3D(-8.940697e-08, 0, 1, 0, 1, 0, -1, 0, -8.940697e-08, -12.963724, 3.3505523, 6.8762956)
 direction = Vector3(1, 0, 0)
 
-[node name="EnemySlime2" parent="Node3D" instance=ExtResource("10_gyffv")]
+[node name="EnemySlime2" parent="SlimeEnemies" instance=ExtResource("10_gyffv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.036276, 3.3505523, -10.019125)
 direction = Vector3(0, 0, 1)
+
+[node name="EnemySlime4" parent="SlimeEnemies" instance=ExtResource("10_gyffv")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.036276, 3.3505523, -5.019125)
+direction = Vector3(0, 0, -1)
 
 [connection signal="body_entered" from="FallZone" to="Player" method="_on_fall_zone_body_entered"]

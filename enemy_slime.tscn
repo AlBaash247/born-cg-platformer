@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cuwsfu2xhhiv7"]
+[gd_scene load_steps=14 format=4 uid="uid://cuwsfu2xhhiv7"]
 
 [ext_resource type="Script" uid="uid://dj2sewc25xmp2" path="res://enemy_slime.gd" id="1_b3bix"]
 
@@ -168,6 +168,14 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_543p7"]
 radius = 0.30643988
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b3bix"]
+height = 0.29888916
+radius = 0.38183594
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k8dlg"]
+height = 0.22332
+radius = 0.34960938
+
 [node name="EnemySlime" type="CharacterBody3D"]
 collision_layer = 8
 collision_mask = 2
@@ -183,14 +191,14 @@ bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/enabled = true
 bones/0/position = Vector3(0, 0, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
-bones/0/scale = Vector3(1, 1, 1)
+bones/0/scale = Vector3(1.1778777, 0.76852155, 1.1778777)
 bones/1/name = "FaceBone"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, -7.105427e-15, -2.3841851e-07, 6.956168e-08, 0.95649064, 0.2917629, 2.2804508e-07, -0.29176286, 0.9564907, 0, 1.2925029, 0.8621061)
 bones/1/enabled = true
-bones/1/position = Vector3(1.862656e-09, 1.3154662, 0.911313)
-bones/1/rotation = Quaternion(-0.113660425, -1.1843675e-07, 1.3549391e-08, 0.9935197)
-bones/1/scale = Vector3(1, 0.9999999, 1)
+bones/1/position = Vector3(1.862668e-09, 1.3174298, 0.9449995)
+bones/1/rotation = Quaternion(-0.23405476, -1.15993274e-07, 3.247897e-08, 0.97222346)
+bones/1/scale = Vector3(0.8491336, 1.2278401, 0.95374405)
 
 [node name="Cube" type="MeshInstance3D" parent="Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_bu0v1")
@@ -205,3 +213,20 @@ autoplay = "blob"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28326264, 0)
 shape = SubResource("SphereShape3D_543p7")
+
+[node name="EnemySlimeSideChecker" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemySlimeSideChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18022263, 0)
+shape = SubResource("CylinderShape3D_b3bix")
+
+[node name="EnemySlimeTopChecker" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemySlimeTopChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48752362, 0)
+shape = SubResource("CylinderShape3D_k8dlg")
+
+[connection signal="body_entered" from="EnemySlimeSideChecker" to="." method="_on_enemy_slime_side_checker_body_entered"]
+[connection signal="body_entered" from="EnemySlimeTopChecker" to="." method="_on_enemy_slime_top_checker_body_entered"]
