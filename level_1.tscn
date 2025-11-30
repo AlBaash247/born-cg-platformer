@@ -418,6 +418,5 @@ direction = Vector3(0, 0, 1)
 [node name="EnemySlime4" parent="SlimeEnemies" instance=ExtResource("10_gyffv")]
 transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -25.16033, 5.7047772, 13.95648)
 direction = Vector3(-1, 0, 0)
-enable_turn_around_at_edges = false
 
 [connection signal="body_entered" from="FallZone" to="Player" method="_on_fall_zone_body_entered"]
