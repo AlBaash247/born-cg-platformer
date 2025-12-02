@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BornCG_Platformer"
-run/main_scene="uid://it8eaqtteokd"
+run/main_scene="uid://c2kwuguhhnj2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

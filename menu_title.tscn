@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2kwuguhhnj2"]
+
+[ext_resource type="FontFile" uid="uid://v7wtexb0t8pa" path="res://Assets/Fonts/KiriFont.ttf" id="1_a1x2l"]
+[ext_resource type="Script" uid="uid://1ulllbrcl7f2" path="res://menu_title.gd" id="1_weaej"]
+[ext_resource type="Texture2D" uid="uid://cxhox0ggbgjbl" path="res://Assets/images/image-screen-title.png" id="2_n3opb"]
+[ext_resource type="FontFile" uid="uid://c4dlw7ujwh6su" path="res://Assets/Fonts/FrancoisOne-Regular.ttf" id="3_5cs7u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cs7u"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 0)
+
+[node name="MenuTitle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_weaej")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1160.0
+offset_bottom = 656.0
+color = Color(0.14901961, 0.019607844, 0.47843137, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 144.0
+offset_right = 1044.0
+offset_bottom = 264.0
+theme_override_colors/font_shadow_color = Color(0.78431374, 0.6392157, 0.8392157, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("1_a1x2l")
+theme_override_font_sizes/font_size = 72
+text = "BornCG__Platformer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 144.0
+offset_right = 1109.3333
+offset_bottom = 680.0
+texture = ExtResource("2_n3opb")
+expand_mode = 1
+
+[node name="BtnPlay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 312.0
+offset_right = 960.0
+offset_bottom = 400.0
+theme_override_colors/font_color = Color(0.74509805, 0.6039216, 0.23529412, 1)
+theme_override_colors/font_focus_color = Color(0.8666667, 0.7764706, 0.50980395, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8666667, 0.7764706, 0.50980395, 1)
+theme_override_fonts/font = ExtResource("3_5cs7u")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxFlat_5cs7u")
+text = "PLAY"
+flat = true
+
+[connection signal="pressed" from="BtnPlay" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="BtnPlay" to="." method="_on_button_pressed"]

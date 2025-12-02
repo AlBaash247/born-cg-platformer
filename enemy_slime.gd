@@ -45,7 +45,7 @@ func turn_around():
 
 func _on_enemy_slime_side_checker_body_entered(body: Node3D) -> void:
 	#if player to an enemy from the side then change the scene!
-	get_tree().change_scene_to_file("res://level_1.tscn")
+	get_tree().change_scene_to_file("res://menu_game_over.tscn")
 
 # body represents the node that came into contact with area3d
 func _on_enemy_slime_top_checker_body_entered(body: Node3D) -> void:

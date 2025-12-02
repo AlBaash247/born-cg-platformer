@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkmac4pspw6cf"]
+
+[ext_resource type="FontFile" uid="uid://v7wtexb0t8pa" path="res://Assets/Fonts/KiriFont.ttf" id="1_crnmb"]
+[ext_resource type="Script" uid="uid://cikpq6wsqymhd" path="res://menu_game_win.gd" id="1_jhchj"]
+[ext_resource type="Texture2D" uid="uid://bywtop5l24enn" path="res://Assets/images/image-screen-win.png" id="2_crnmb"]
+[ext_resource type="FontFile" uid="uid://c4dlw7ujwh6su" path="res://Assets/Fonts/FrancoisOne-Regular.ttf" id="3_1c7oo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptml0"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 0)
+
+[node name="MenuGameWin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jhchj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1160.0
+offset_bottom = 656.0
+color = Color(2.4065375e-06, 0.5317743, 0.3984457, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 64.0
+offset_right = 1032.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(3.85046e-06, 0.8062957, 0.6105894, 1)
+theme_override_colors/font_shadow_color = Color(0.99215686, 0.9254902, 0.9372549, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("1_crnmb")
+theme_override_font_sizes/font_size = 72
+text = "YOU WON !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = -40.0
+offset_right = 1013.33325
+offset_bottom = 520.0
+texture = ExtResource("2_crnmb")
+expand_mode = 1
+
+[node name="BtnMainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 504.0
+offset_right = 725.0
+offset_bottom = 592.0
+theme_override_colors/font_color = Color(0.74509805, 0.6039216, 0.23529412, 1)
+theme_override_colors/font_focus_color = Color(0.8666667, 0.7764706, 0.50980395, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8666667, 0.7764706, 0.50980395, 1)
+theme_override_fonts/font = ExtResource("3_1c7oo")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxFlat_ptml0")
+text = "MAIN MENU"
+flat = true
+
+[connection signal="pressed" from="BtnMainMenu" to="." method="_on_btn_main_menu_pressed"]
