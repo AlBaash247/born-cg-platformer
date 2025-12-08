@@ -30,6 +30,7 @@ func check_if_coins_container_exist_in_current_level() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	
 	GlobalScript.increment_current_level_coins_collected()
+	SoundManager.play_coin_sound()
 	hud.get_node("CoinsCollectedLabel").text = str(GlobalScript.current_level_coins_collected)
 
 	set_collision_layer_value(3, false)

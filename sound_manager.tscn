@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bly8vh2g86j0s"]
+
+[ext_resource type="AudioStream" uid="uid://b3ukti4y16ljv" path="res://Assets/SoundEffects/enemy-lose4.ogg" id="1_g5net"]
+[ext_resource type="Script" uid="uid://bkmhjasstxpyl" path="res://sound_manager.gd" id="1_mdjn0"]
+[ext_resource type="AudioStream" uid="uid://cuoljgkce4lwe" path="res://Assets/SoundEffects/coin-coin3.ogg" id="3_22ksp"]
+[ext_resource type="AudioStream" uid="uid://bw3117ua5ndcy" path="res://Assets/SoundEffects/fall-gameover2.ogg" id="4_ndygv"]
+[ext_resource type="AudioStream" uid="uid://cupobaekh74im" path="res://Assets/Music/Menu-RetroMystic.ogg" id="5_h8btt"]
+[ext_resource type="AudioStream" uid="uid://w5e8swsgfchc" path="res://Assets/Music/Level-RetroBeat.ogg" id="6_7jwsb"]
+
+[node name="SoundManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mdjn0")
+
+[node name="SoundSlimeEnemy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_g5net")
+volume_db = -25.0
+
+[node name="SoundCoin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_22ksp")
+volume_db = -15.0
+
+[node name="SoundFallZone" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ndygv")
+volume_db = -25.0
+
+[node name="SoundButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_22ksp")
+volume_db = -15.0
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_h8btt")
+volume_db = -10.0
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7jwsb")
+volume_db = -15.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://dn66g7w7jx5hr"]
+[gd_scene load_steps=22 format=4 uid="uid://dn66g7w7jx5hr"]
 
 [ext_resource type="Script" uid="uid://b3p8jbkr4gjif" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="AudioStream" uid="uid://c2yc36hkkvwle" path="res://Assets/SoundEffects/jump-jump4.ogg" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://bxbsbsarranlr" path="res://Assets/Models/game-robot-001_robot_mix_decals.png" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
@@ -812,7 +813,7 @@ collision_mask = 22
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8655511, 0, 0.1543274, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1543274, 0)
 shape = SubResource("CapsuleShape3D_onrkg")
 
 [node name="CameraController" type="Node3D" parent="."]
@@ -914,3 +915,7 @@ skin = SubResource("Skin_hqtel")
 libraries = {
 &"": SubResource("AnimationLibrary_bgh40")
 }
+
+[node name="SoundJump" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_i3pqv")
+volume_db = -33.0

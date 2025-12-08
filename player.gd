@@ -43,7 +43,9 @@ func handle_palyer_movment() -> void:
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		$SoundJump.play()
 		velocity.y = JUMP_VELOCITY
+
 
 	
 	# make player character move in relation of camera rotaiton
@@ -88,4 +90,5 @@ func bounce () -> void:
 
 func _on_fall_zone_body_entered(body: Node3D) -> void:
 	#reset game if player fall off
+	SoundManager.play_fall_zone_sound()
 	get_tree().change_scene_to_file("res://menu_game_over.tscn")
