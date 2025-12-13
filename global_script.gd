@@ -9,5 +9,5 @@ func increment_current_level_coins_collected():
 	current_level_coins_collected += 1
 	# print(current_level_coins_collected , current_level_coins_count)
 	# if player collected all coins in this level the switch to the next level
-	if current_level_coins_collected == 1 :
+	if current_level_coins_collected == current_level_coins_count :
 		get_tree().change_scene_to_file("res://menu_game_win.tscn")

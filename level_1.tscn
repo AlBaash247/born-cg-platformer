@@ -19,6 +19,11 @@ size = Vector3(150, 12, 180)
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_bjebc")
 
+[node name="HUD" parent="." instance=ExtResource("9_5rr72")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("6_5hph3")
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.7815205, 0.6238796, 0, -0.6238796, 0.7815205, 0, 4.2527676, 6.608469)
 
@@ -28,27 +33,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_hbghi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6929092, 4.149556, 2.8001442)
-
-[node name="FallingBlocksContainer" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.515379, 0, -6.6227894)
-
-[node name="FallingBlock1" parent="FallingBlocksContainer" instance=ExtResource("1_3hls8")]
-transform = Transform3D(0.7071068, -0.7071068, 0, 0.7040288, 0.7040288, 0.09320474, -0.065905705, -0.065905705, 0.99564695, 0, 3, 0)
-
-[node name="FallingBlock2" parent="FallingBlocksContainer" instance=ExtResource("1_3hls8")]
-transform = Transform3D(0.24478205, -0.93923277, -0.24067359, 0.9693959, 0.23226082, 0.07954227, -0.018809658, -0.25277847, 0.9673413, 0.56131554, 4.723588, -1.8068514)
-
-[node name="FallingBlock3" parent="FallingBlocksContainer" instance=ExtResource("1_3hls8")]
-transform = Transform3D(0.23649204, -0.9704182, -0.04858139, 0.9693959, 0.23226082, 0.07954227, -0.065905705, -0.065905705, 0.99564695, 2.47712, 3, -1.8068514)
-
-[node name="FallingBlock4" parent="FallingBlocksContainer" instance=ExtResource("1_3hls8")]
-transform = Transform3D(0.24522993, -0.9007868, -0.3583929, 0.9693959, 0.23226082, 0.07954227, 0.0115899965, -0.3669307, 0.9301761, 0.5629554, 3, -1.8068514)
-
-[node name="CoinsIcon" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.200758, 1.1141369, 3.2055473)
-visible = false
-texture = ExtResource("3_hn12h")
-script = ExtResource("4_ihfcg")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("7_j7kpp")
@@ -482,11 +466,6 @@ hud = NodePath("../../HUD")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.726999, -18.327002, 17.016)
 hud = NodePath("../../HUD")
 
-[node name="HUD" parent="." instance=ExtResource("9_5rr72")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("6_5hph3")
-
 [node name="FallZone" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.737097, 0)
 collision_layer = 16
@@ -494,5 +473,26 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.016144, -6.1334324, -35.806274)
 shape = SubResource("BoxShape3D_j7kpp")
+
+[node name="CoinsIcon" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.200758, 1.1141369, 3.2055473)
+visible = false
+texture = ExtResource("3_hn12h")
+script = ExtResource("4_ihfcg")
+
+[node name="FallingBlocksContainer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.515379, 0, -6.6227894)
+
+[node name="FallingBlock1" parent="FallingBlocksContainer" instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.7071068, -0.7071068, 0, 0.7040288, 0.7040288, 0.09320474, -0.065905705, -0.065905705, 0.99564695, 0, 3, 0)
+
+[node name="FallingBlock2" parent="FallingBlocksContainer" instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.24478205, -0.93923277, -0.24067359, 0.9693959, 0.23226082, 0.07954227, -0.018809658, -0.25277847, 0.9673413, 0.56131554, 4.723588, -1.8068514)
+
+[node name="FallingBlock3" parent="FallingBlocksContainer" instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.23649204, -0.9704182, -0.04858139, 0.9693959, 0.23226082, 0.07954227, -0.065905705, -0.065905705, 0.99564695, 2.47712, 3, -1.8068514)
+
+[node name="FallingBlock4" parent="FallingBlocksContainer" instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.24522993, -0.9007868, -0.3583929, 0.9693959, 0.23226082, 0.07954227, 0.0115899965, -0.3669307, 0.9301761, 0.5629554, 3, -1.8068514)
 
 [connection signal="body_entered" from="FallZone" to="Player" method="_on_fall_zone_body_entered"]

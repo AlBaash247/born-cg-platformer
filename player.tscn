@@ -817,13 +817,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1543274, 0)
 shape = SubResource("CapsuleShape3D_onrkg")
 
 [node name="CameraController" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
 top_level = true
 
 [node name="CameraTarget" type="Node3D" parent="CameraController"]
-transform = Transform3D(1, 0, 0, 0, 0.96642095, 0.25696412, 0, -0.25696412, 0.96642095, 0, 2.992628, 5.7357535)
+transform = Transform3D(1, 0, 0, 0, 0.96637607, 0.2571328, 0, -0.2571328, 0.96637607, 0, 2.993, 7)
 
 [node name="Camera3D" type="Camera3D" parent="CameraController/CameraTarget"]
-transform = Transform3D(1, 0, 0, 0, 0.9969746, 0.077728294, 0, -0.077728294, 0.9969746, 0, -0.62084305, -1.8261622)
+transform = Transform3D(1, 0, 0, 0, 0.9969745, 0.07772829, 0, -0.07772829, 0.9969745, 0, -0.621, -1.826)
 current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
@@ -832,10 +833,9 @@ collision_mask = 2
 script = SubResource("GDScript_4flbx")
 
 [node name="Armature" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.22239894, 0)
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, -0.22239894, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 bones/0/name = "Bone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
